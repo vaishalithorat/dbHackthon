@@ -1,0 +1,39 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Get Help On Your Queries?</h4>
+                      <p class="card-category">ChatBot</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">                              
+                              <tbody>
+                                  <tr *ngFor="let message of chatMessages">
+                                      <td>
+                                            <div class="alert alert-info alert-with-icon" data-notify="container">
+                                                    <i class="material-icons" data-notify="icon">add_alert</i>
+                                                    <span data-notify="message">{{message.chat}}</span>
+                                                </div>
+                                      </td>                                      
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                        <div class="input-group">
+                                <input type="text" value="" class="form-control" [(ngModel)]="message" placeholder="Ask Question...">
+                                <button mat-raised-button  type="submit" class="btn btn-white btn-round btn-just-icon" (click)="addMessages()" [disabled]="!message || message.lenth < 0">
+                                    <i class="material-icons">send</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
